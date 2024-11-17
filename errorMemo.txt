@@ -1,0 +1,38 @@
+[@Controller로 선언시]
+- Rest한 내용을 전부 설정이 안됨
+- Rest한 내용 리턴을 하기 위해서는 @ResponseBody를 붙여 rest하게 바꿈
+──────────────────────────────────────────
+[location.href로 이동시 이전 리스트 데이터 남아있는 현상]
+- href는 history에서 꺼내어 캐시가 남아있어서 window.location으로 새로 요청해야함
+──────────────────────────────────────────
+[@RequestParam, @RequestBody]
+- @RequestParam은 get,post 모두 사용하며, key=value 형식에서만 가능
+- localhost?page=1 일 때 (@RequestParam String page,)
+
+- @RequestBody는 오직 POST일 때만 사용 가능하며 VO 객체에 매핑시킬 수 있다.
+
+──────────────────────────────────────────
+
+[await async의 몰랐던 점]
+ex) 
+-> await는 본인이 끝나기 전까지 다음 코드를 interpreting 하지 않는다.
+-> 하지만 await의 내부 리턴값이 Promise여야지만 가능하다.
+──────────────────────────────────────────
+[EntityManager의 persistenceContext, JPA와의 관계]
+-> EntityManager는 Jpa가 컨트롤 한다.
+-> EntityManager가 관리하는 Entity는 "Persistence Context" 내에 있다.
+-> "Persistence Context"는 Temporary임.
+-> Transaction이 끝나면 Persistence Context 내에 있는 Entity들을 지운다. 
+
+──────────────────────────────────────────
+[JPA와 hibernate, EntityManger 관계]
+-> 
+
+──────────────────────────────────────────
+[EntityManager]
+-> Jpa 없이 사용할 수 없다.
+
+──────────────────────────────────────────
+
+[Hibernate]
+-> database data를 Java Object (POJO)로 변환해서 사용할 수 있도록 도와줌
